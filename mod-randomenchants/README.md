@@ -1,3 +1,5 @@
+# ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
+- Latest build status with azerothcore: [![Build Status](https://travis-ci.org/azerothcore/mod-random-enchants.svg?branch=master)](https://travis-ci.org/azerothcore/mod-random-enchants)
 
 <b>Make sure to support the main project:
 https://github.com/azerothcore/azerothcore-wotlk/</b>
@@ -10,6 +12,3 @@ https://github.com/azerothcore/azerothcore-wotlk/</b>
 * Login message for the module (on, off and what to display)
 * Select if you want to enchant loot, quest reward, profession or all
 * <b>Modify the source to mess with the chances of enchantment</b>
-
-# Modifications #
-v2017.07.29 - StygianTheBest - Added module announce, Changed strings

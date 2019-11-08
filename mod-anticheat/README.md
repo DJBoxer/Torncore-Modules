@@ -1,6 +1,6 @@
 # Anticheat Module
+- Latest build status with azerothcore: [![Build Status](https://travis-ci.com/milestorme/mod-anticheat.svg?branch=master)](https://travis-ci.com/milestorme/mod-anticheat).
 
-This is a port of the PassiveAnticheat Script from lordpsyan's repo to [AzerothCore](http://www.azerothcore.org)
 
 ## How to install
 

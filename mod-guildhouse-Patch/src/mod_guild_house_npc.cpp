@@ -57,7 +57,7 @@ public:
         return true;
     }
 
-    bool OnGossipSelect(Player *player, Creature * m_creature, uint32 sender, uint32 action)
+    bool OnGossipSelect(Player *player, Creature * m_creature, uint32 /*sender*/, uint32 action)
     {
 
         switch (action)
@@ -373,7 +373,8 @@ public:
     GuildHouseNPCConf() : WorldScript("GuildHouseNPCConf") {}
 
     void OnBeforeConfigLoad(bool reload) override
-    {
+       {
+    if (!reload) {
         GuildHouseInnKeeper = sConfigMgr->GetIntDefault("GuildHouseInnKeeper", 1000000);
         GuildHouseBank = sConfigMgr->GetIntDefault("GuildHouseBank", 1000000);
         GuildHouseMailBox = sConfigMgr->GetIntDefault("GuildHouseMailbox", 500000);
@@ -386,6 +387,7 @@ public:
         GuildHouseSpirit = sConfigMgr->GetIntDefault("GuildHouseSpirit", 100000);
         GuildHouseZomble = sConfigMgr->GetIntDefault("GuildHouseZomble", 1000000);    
         GuildHouseBuyRank = sConfigMgr->GetIntDefault("GuildHouseBuyRank", 0);		
+        }
     }
 };
 
