@@ -10,7 +10,30 @@
 --                      /\___/ /\____/                                                
 --                      \/__/  \_/__/          http://stygianthebest.github.io                                         
 -- 
+-- ###################################################################################### --
+-- CORE MOD: GM ISLAND
+-- NPC ID: 601035
+-- 
+-- This creates an NPC that will allow the player to change the theme around GM Island.
+-- v2018-12-01 - Original script ported to AzerothCore module.
+-- 
+-- ###################################################################################### --
 */
+
+-- ######################################################--
+--	GM Island Theminator - 601035 - Molten Giant
+-- ######################################################--
+SET @NPC_ENTRY := 601035;
+
+DELETE FROM `creature` WHERE `id`=@NPC_ENTRY;
+INSERT INTO `creature` (`id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES 
+(@NPC_ENTRY, 1, 1, 1, 0, 0, 16253.8, 16234.9, 33.5163, 2.3098, 300, 0, 0, 53420, 0, 0, 0, 0, 0);
+
+
+DELETE FROM `creature_template` WHERE `entry`=@NPC_ENTRY;
+INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `mindmg`, `maxdmg`, `dmgschool`, `attackpower`, `dmg_multiplier`, `baseattacktime`, `rangeattacktime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `minrangedmg`, `maxrangedmg`, `rangedattackpower`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `Health_mod`, `Mana_mod`, `Armor_mod`, `RacialLeader`,`movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES 
+(@NPC_ENTRY, 0, 0, 0, 0, 0, 12162, 0, 0, 0, 'Zomble', '|cff00ccffThe Theminator|r', NULL, 0, 80, 80, 0, 35, 1, 1, 1.14286, 0.25, 1, 1000, 3000, 0, 0, 15, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 10, 1, 1, 0, 0, 1, 0, 0, 'GMIsland_Theme_Generator', 0);
+
 -- Dumping structure for table gmi_logs
 DROP TABLE IF EXISTS `gmi_logs`;
 CREATE TABLE IF NOT EXISTS `gmi_logs` (
