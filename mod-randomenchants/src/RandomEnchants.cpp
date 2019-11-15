@@ -68,7 +68,7 @@ public:
 		}
 	}
 
-	void OnLootItem(Player* player, Item* item, uint32 /*count*/, uint64 /*lootguid*/) override
+	void OnLootItem(Player* player, Item* item, uint32 count, uint64 /*lootguid*/) override
 	{
 		if (RandomEnchantEnabled)
 		{
@@ -76,7 +76,7 @@ public:
 		}
 	}
 
-	void OnCreateItem(Player* player, Item* item, uint32 /*count*/) override
+	void OnCreateItem(Player* player, Item* item, uint32 count) override
 	{
 		if (RandomEnchantEnabled)
 		{
@@ -87,7 +87,7 @@ public:
 		}
 	}
 
-	void OnQuestRewardItem(Player* player, Item* item, uint32 /*count*/) override
+	void OnQuestRewardItem(Player* player, Item* item, uint32 count) override
 	{
 		if (RandomEnchantEnabled)
 		{
