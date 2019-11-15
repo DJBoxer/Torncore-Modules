@@ -1,5 +1,6 @@
+
 # Guild House Module
-- Latest build status with azerothcore: [![Build Status](https://travis-ci.org/milestorme/mod-guildhouse.svg?branch=master)](https://travis-ci.org/milestorme/mod-guildhouse)
+
 
 ## Description
 
@@ -11,14 +12,11 @@ All guilds will get their own phasing system which then the guild master will ha
 * Class Trainers (all available in Wrath)
 * Primary Profession Trainers (all available in Wrath)
 * Secondary Profession Trainers (all available in Wrath)
-* Vendors: Reagents, Food & Water, Fire and Trade Goods
+* Vendors: Reagents, Food & Water and Trade Goods
 * Portals to Neutral, Horde and Alliance cities
 * Spirit Healer
 * Guild Bank and Personal Bank access
 * Auctioneer
-* Master Weapons
-* BeastMaster
-* GuildHouse Themenator
 
 ## How to use ingame
 1) Purchase a guild house from the NPC (entry:55005), then either teleport to the guildhouse via the NPC or chat: `.guildhouse tele`
@@ -36,10 +34,8 @@ My new module requires:
 ```
 1) Simply place the module under the `modules` directory of your AzerothCore source. 
 2) Import the SQL manually to the right Database (auth, world or characters)
-3) Apply the guildhouse.patch to your source. 
-4) Apply BeastMaster Patch to allow pets for all players.
-5) Re-run cmake and launch a clean build of AzerothCore.
-
+3) Apply the guildhouse.patch to your source 
+4) Re-run cmake and launch a clean build of AzerothCore.
 ```
 ## Patch Information
 

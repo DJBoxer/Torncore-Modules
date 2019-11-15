@@ -2,8 +2,6 @@
 #include "AnticheatMgr.h"
 #include "Object.h"
 #include "AccountMgr.h"
-#include "Player.h"
-#include "Chat.h"
 
 
 int64 resetTime = 0;
