@@ -30,7 +30,7 @@ public:
 
     GuildHelper() : GuildScript("GuildHelper") { }
 
-    void OnCreate(Guild* /*guild*/, Player* leader, const std::string& /*name*/)
+    void OnCreate(Guild* guild, Player* leader, const std::string& name)
     {
         ChatHandler(leader->GetSession()).PSendSysMessage("You now own a guild. You can purchase a guild house!");
     }
@@ -73,7 +73,7 @@ public:
         return true;
     }
 
-    bool OnGossipSelect(Player *player, Creature * m_creature, uint32 /*sender*/, uint32 action)
+    bool OnGossipSelect(Player *player, Creature * m_creature, uint32 sender, uint32 action)
     {
         uint32 map;
         float posX;
@@ -165,8 +165,8 @@ public:
         do {
 
             Field* fields = result->Fetch();
-      //      uint32 id = fields[0].GetUInt32();
-      //      uint32 guild = fields[1].GetUInt32();
+            uint32 id = fields[0].GetUInt32();
+            uint32 guild = fields[1].GetUInt32();
             guildData->phase = fields[2].GetUInt32();
             uint32 map = fields[3].GetUInt32();
             guildData->posX = fields[4].GetFloat();
@@ -190,7 +190,7 @@ public:
         CheckPlayer(player);
     }
 
-    void OnUpdateZone(Player* player, uint32 newZone, uint32 /*newArea*/)
+    void OnUpdateZone(Player* player, uint32 newZone, uint32 newArea)
     {
         if (newZone == 876)
             CheckPlayer(player);
@@ -224,10 +224,10 @@ public:
         do {
 
             Field* fields = result->Fetch();
-      //      uint32 id = fields[0].GetUInt32();
-      //      uint32 guild = fields[1].GetUInt32();
+            uint32 id = fields[0].GetUInt32();
+            uint32 guild = fields[1].GetUInt32();
             guildData->phase = fields[2].GetUInt32();
-      //      uint32 map = fields[3].GetUInt32();
+            uint32 map = fields[3].GetUInt32();
             guildData->posX = fields[4].GetFloat();
             guildData->posY = fields[5].GetFloat();
             guildData->posZ = fields[6].GetFloat();
@@ -342,8 +342,8 @@ public:
         do {
 
             Field* fields = result->Fetch();
-         //   uint32 id = fields[0].GetUInt32();
-         //   uint32 guild = fields[1].GetUInt32();
+            uint32 id = fields[0].GetUInt32();
+            uint32 guild = fields[1].GetUInt32();
             guildData->phase = fields[2].GetUInt32();
             uint32 map = fields[3].GetUInt32();
             guildData->posX = fields[4].GetFloat();

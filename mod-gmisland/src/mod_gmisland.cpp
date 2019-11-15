@@ -47,7 +47,7 @@ other GM Island related content.
 - This code and content is released under the [GNU AGPL v3](https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE-AGPL3).
 
 */
-#include "Chat.h"
+
 #include "Config.h"
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
@@ -68,7 +68,7 @@ namespace Tools
             return 0;
     }
 
-    void SendAnnounceToGMs(const char* text, WorldSession* /*self*/)
+    void SendAnnounceToGMs(const char* text, WorldSession* self)
     {
         std::map<uint32, WorldPacket> localizedPackets;
         SessionMap const& smap = sWorld->GetAllSessions();
@@ -175,7 +175,7 @@ public:
         return true;
     }
 
-    bool OnGossipSelect(Player* player, Creature* creature, uint32 /*sender*/, uint32 action) override
+    bool OnGossipSelect(Player* player, Creature* creature, uint32 sender, uint32 action) override
     {
         switch (action)
         {
